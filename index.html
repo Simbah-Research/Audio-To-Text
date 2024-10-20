@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Audio Text</title>
+    <style>
+      body {
+        background-image: url("back.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      .navbar img {
+        height: 40px;
+      }
+      .container {
+        margin-top: 60px; /* Add top margin to prevent overlap with navbar */
+        flex-grow: 1;
+      }
+      .footer {
+        text-align: center;
+        padding: 10px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="logo.png" alt="Logo" />
+    </nav>
+    <div class="container">
+      <p class="heading">Audio to Text</p>
+      <div class="options">
+        <div class="language">
+          <p>Pilih Bahasa</p>
+          <select name="input-language" id="language"></select>
+        </div>
+      </div>
+      <div class="line"></div>
+      <button class="btn record">
+        <div class="icon">
+          <ion-icon name="mic-outline"></ion-icon>
+          <img src="back.png" alt="" />
+        </div>
+        <p>Start Listening</p>
+      </button>
+      <p class="heading">Result :</p>
+      <div
+        class="result"
+        contenteditable="true"
+        spellcheck="false"
+        placeholder="Text will be shown here"
+      >
+        <p class="interim"></p>
+      </div>
+      <div class="buttons">
+        <button class="btn clear">
+          <ion-icon name="icon-name"></ion-icon>
+          <span>Clear</span>
+        </button>
+        <button class="btn copy-text">
+          <ion-icon name="copy-outline"></ion-icon>
+          <p>Copy Text</p>
+        </button>
+        <button class="btn download-audio" disabled>
+          <ion-icon name="cloud-download-outline"></ion-icon>
+          <p>Download Audio</p>
+        </button>
+        <input
+          type="file"
+          class="upload"
+          accept="audio/*"
+          id="upload-audio"
+          style="display: none"
+        />
+        <label for="upload-audio" class="btn upload-label">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          <p>Upload Audio</p>
+        </label>
+      </div>
+      
+    </div>
+    <footer class="footer">
+      <a
+        href="https://www.instagram.com/ihfan_sholih/profilecard/?igsh=Zjh3ZWtzc2Rmd3Vm"
+        target="_blank"
+      >
+        <span>&copy; 2024 | Si'Mbah_Research</span>
+  </footer>
+
+    <!-- IONICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- LANGUAGES -->
+    <script src="languages.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="script copy.js"></script>
+  </body>
+</html>
